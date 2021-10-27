@@ -1,0 +1,22 @@
+@use './variables' as *;
+
+@mixin contentStyle {
+	max-width: $max-content-width;
+	margin: 0 auto;
+}
+
+// POSITIONS
+@mixin absoluteCenter($top: 50%, $left: 50%) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	transform: translate(-50%, -50%);
+}
+
+// FLEXBOX
+@mixin flex($justify: flex-start, $align: stretch, $direction: row) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}

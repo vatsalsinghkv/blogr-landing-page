@@ -1,0 +1,58 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+.btn {
+	// <button> too
+	&,
+	&:link,
+	&:visited {
+		display: inline-block;
+		font-family: $font-display;
+		font-weight: bold;
+		text-decoration: none;
+
+		padding: 1.5rem 3rem;
+		border-radius: 10rem;
+		position: relative;
+
+		transition: all 0.2s;
+		// border: none;
+		// cursor: pointer;
+	}
+
+	&--primary {
+		color: $color-white;
+
+		&:hover {
+			background-color: rgba($color-white, 0.3);
+		}
+	}
+
+	&--white {
+		color: $color-primary;
+		background-color: $color-white;
+
+		&:hover {
+			color: $color-white;
+			background-color: rgba($color-white, 0.3);
+		}
+	}
+
+	&--outline {
+		color: $color-white;
+		border: 1px solid $color-white;
+
+		&:hover {
+			color: $color-primary;
+			background-color: $color-white;
+		}
+	}
+}
+
+.btn-group .btn {
+	padding: 1.5rem 2.5rem;
+
+	&:not(:last-child) {
+		margin-right: 1.5rem;
+	}
+}

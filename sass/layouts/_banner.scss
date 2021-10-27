@@ -1,0 +1,25 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+.banner {
+	background: url('#{$images-path}/bg-pattern-circles.svg') no-repeat,
+		linear-gradient(to right, $color-grey-blue-2, $color-grey-blue-1);
+
+	background-size: 75%, cover;
+	background-position: -230px -550px, 0 0;
+	color: $color-white;
+	border-radius: 0 15rem;
+
+	&__container {
+		@include contentStyle;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 40rem;
+	}
+
+	&__img {
+		display: inline-block;
+		margin-top: 5rem;
+	}
+}

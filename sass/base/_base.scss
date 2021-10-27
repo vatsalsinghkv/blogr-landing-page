@@ -1,0 +1,15 @@
+@use '../abstract/variables' as *;
+@use 'sass:math';
+
+html {
+	box-sizing: border-box;
+	font-size: math.div(100, 16) * 10%; //62.5% - 10px
+	// font-size: 10px;
+}
+
+body {
+	font-family: $font-primary;
+	font-size: $font-size;
+	color: $color-text;
+	overflow-x: hidden;
+}

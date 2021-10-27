@@ -1,0 +1,25 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+.header {
+	height: 75vh;
+	border-bottom-left-radius: 10rem;
+	background: url('#{$images-path}/bg-pattern-intro.svg') 25% 52%,
+		linear-gradient(
+			to right,
+			rgba($color-gredient-light, 1),
+			rgba($color-gredient-dark, 1)
+		);
+
+	background-size: 220%, cover;
+	// background-size: 270rem, cover;
+	padding: 5rem 3rem;
+	position: relative;
+
+	// Headig Main
+	&__content {
+		width: 80%;
+		@include absoluteCenter(55%);
+		text-align: center;
+	}
+}

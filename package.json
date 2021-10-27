@@ -1,0 +1,35 @@
+{
+	"name": "blogr-landing-page",
+	"version": "1.0.0",
+	"description": "Blogr landing page using sass",
+	"main": "index.js",
+	"scripts": {
+		"start": "sass sass/main.scss css/style.css -w",
+		"scss:compile": "sass sass/main.scss css/style.comp.css",
+		"scss:postfix": "postcss css/style.comp.css --use autoprefixer -d css/",
+		"scss:compress": "sass css/style.comp.css css/style.css --style compressed",
+		"build": "npm-run-all scss:compile scss:postfix scss:compress"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vatsalsinghkv/blogr-landing-page.git"
+	},
+	"keywords": [
+		"Sass",
+		"Landing",
+		"page",
+		"css"
+	],
+	"author": "Vatsal Singh",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/vatsalsinghkv/blogr-landing-page/issues"
+	},
+	"homepage": "https://github.com/vatsalsinghkv/blogr-landing-page#readme",
+	"devDependencies": {
+		"autoprefixer": "^10.3.7",
+		"npm-run-all": "^4.1.5",
+		"postcss-cli": "^9.0.1",
+		"sass": "^1.43.2"
+	}
+}

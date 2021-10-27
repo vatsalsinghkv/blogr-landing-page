@@ -1,0 +1,60 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
+
+.navbar {
+	@include contentStyle;
+	@include flex(flex-start, center);
+	font-family: $font-display;
+
+	&__logo {
+		margin-right: 5rem;
+	}
+
+	// Button
+	// todo: Make visible and functional
+	&__toggler {
+		display: none;
+	}
+
+	// Icon for Button
+	// todo: Make it hamburger button
+	&__icon {
+	}
+
+	// todo: Make it white for mobile
+	&__background {
+		width: 100%;
+		@include flex(space-between, center);
+	}
+
+	// Navigation
+	&__nav {
+		@include flex(flex-start, center);
+		list-style: none;
+		margin-right: auto;
+	}
+}
+
+// Navigation
+.nav {
+	&__link {
+		cursor: pointer;
+		user-select: none;
+
+		display: inline-block;
+		padding: 1.5rem 1rem;
+		&:not(:last-child) {
+			margin-right: 2rem;
+		}
+
+		color: rgba($color-white, 0.7);
+		font-weight: bold;
+		text-decoration: none;
+		transition: all 0.2s;
+
+		&:hover {
+			color: $color-white;
+			text-decoration: underline;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+// Section
+
+.about {
+	margin: 4rem 0;
+	padding: 8rem 2%;
+	background: url('#{$images-path}/illustration-editor-desktop.svg') no-repeat;
+	background-position: 55vw;
+	background-size: 90rem;
+	height: 87rem;
+
+	&__container {
+		@include contentStyle;
+	}
+
+	&__text {
+		width: 50%;
+		// display: flex;
+	}
+}

@@ -1,0 +1,51 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+.footer {
+	background-color: $color-grey-3;
+	padding: 8rem 0;
+	border-top-right-radius: 10rem;
+
+	&__container {
+		@include contentStyle;
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.footer-nav {
+	flex: 0 1 55%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+
+	&__heading {
+		color: $color-white;
+		font-size: 1.6rem;
+		font-weight: bold;
+		margin-bottom: 3rem;
+	}
+
+	&__list {
+		list-style: none;
+	}
+
+	&__item {
+		margin: 0.75rem 0;
+	}
+
+	&__link {
+		&,
+		&:link,
+		&:visited {
+			color: $color-grey-1;
+			text-decoration: none;
+			transition: 0.1s all;
+		}
+
+		&:hover {
+			// border-bottom: 2px solid currentColor;
+			text-decoration: underline;
+		}
+	}
+}

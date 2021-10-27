@@ -1,0 +1,38 @@
+@use '../abstract/variables' as *;
+
+.heading-primary {
+	font-family: $font-primary;
+	font-size: 6rem;
+	color: $color-white;
+	margin-bottom: 2rem;
+
+	&--sub {
+		color: $color-white;
+		font-size: 2rem;
+		font-weight: lighter;
+		margin-bottom: 5rem;
+	}
+}
+
+.heading-secondary {
+	font-family: $font-primary;
+	font-size: 3.8rem;
+	color: $color-secondary;
+
+	&--white {
+		color: $color-white;
+	}
+}
+
+.heading-tertiary {
+	font-family: $font-primary;
+	font-size: 2.8rem;
+	color: $color-secondary;
+}
+
+.para {
+	letter-spacing: 0.65px;
+	&:not(:last-child) {
+		margin-bottom: 6rem;
+	}
+}
