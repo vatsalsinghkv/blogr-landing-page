@@ -2,7 +2,7 @@
 @use '../abstract/mixins' as *;
 
 .header {
-	height: 75vh;
+	height: 70vh;
 	border-bottom-left-radius: 10rem;
 	background: url('#{$images-path}/bg-pattern-intro.svg') 25% 52%,
 		linear-gradient(
