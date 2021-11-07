@@ -128,4 +128,4 @@ Technologies I want to learn:
 
 ## Acknowledgments
 
-- [Changing :hover to touch/click for mobile deviceshttps://stackoverflow.com/a/22560108/14076424) - This answer on stackoverflow really helped me.
+- [Changing :hover to touch/click for mobile devices](https://stackoverflow.com/a/22560108/14076424) - This answer on stackoverflow really helped me.
