@@ -6,20 +6,51 @@
 		linear-gradient(to right, $color-grey-blue-2, $color-grey-blue-1);
 
 	background-size: 75%, cover;
-	background-position: -230px -550px, 0 0;
+	background-position: -23rem -55rem, 0 0;
 	color: $color-white;
 	border-radius: 0 15rem;
 
+	@media only screen and (max-width: $md) {
+		background-position: center -25rem, 0 0;
+		background-size: cover;
+		border-radius: 0 20vw;
+	}
+
 	&__container {
+		padding: 0 3rem;
 		@include contentStyle;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		height: 40rem;
+
+		@media only screen and (max-width: $md) {
+			padding: 0 4rem;
+			flex-direction: column;
+			height: auto;
+			padding-bottom: 15vw;
+			text-align: center;
+		}
+
+		@media only screen and (max-width: $sm) {
+			padding: 0 3rem;
+			padding-bottom: 25vw;
+		}
 	}
 
 	&__img {
+		max-width: 100%;
 		display: inline-block;
 		margin-top: 5rem;
+
+		@media only screen and (max-width: $md) {
+			max-width: 70%;
+			margin-top: -30%;
+		}
+
+		@media only screen and (max-width: $sm) {
+			max-width: 110%;
+			margin-top: -45%;
+		}
 	}
 }

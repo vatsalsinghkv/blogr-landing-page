@@ -5,6 +5,14 @@ html {
 	box-sizing: border-box;
 	font-size: math.div(100, 16) * 10%; //62.5% - 10px
 	// font-size: 10px;
+
+	@media only screen and (max-width: $lg) {
+		font-size: math.div(100, 16) * 9%;
+	}
+
+	@media only screen and (max-width: $md) {
+		font-size: math.div(100, 16) * 8%;
+	}
 }
 
 body {

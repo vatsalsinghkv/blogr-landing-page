@@ -4,18 +4,24 @@
 .dropdown {
 	font-family: $font-display;
 	position: relative;
+	@media only screen and (max-width: $md) {
+		text-align: center;
+		width: 100%;
+	}
 
 	&__btn {
 		&,
 		&:link,
 		&:visited {
+			position: relative;
+
 			&::after {
 				content: '';
 				position: absolute;
 				top: 50%;
-				left: 78%;
-				transform: translateY(-40%);
+				right: -10%;
 
+				transform: translateY(-40%);
 				height: 1rem;
 				width: 1rem;
 
@@ -23,49 +29,98 @@
 				background-position: center;
 
 				transition: transform 0.3s ease;
+
+				@media only screen and (max-width: $md) {
+					background: url('#{$images-path}/icon-arrow-dark.svg') no-repeat;
+					right: -8%;
+					color: $color-grey-2;
+				}
 			}
 		}
 
-		&:hover::after {
+		&:hover::after,
+		&:focus::after,
+		&:active::after {
 			background: none;
 			background-color: #fff;
 			-webkit-mask: url('#{$images-path}/icon-arrow-dark.svg');
 			-webkit-mask-repeat: no-repeat;
 			top: 41%;
 			transform: rotate(180deg);
+
+			@media only screen and (max-width: $md) {
+				background: url('#{$images-path}/icon-arrow-dark.svg') no-repeat;
+				top: 35%;
+				transform: rotate(180deg);
+			}
 		}
 	}
 
-	&__btn:hover + &__content {
+	&__btn:hover + &__content,
+	&__btn:active + &__content,
+	&__btn:focus + &__content {
 		transition: all 0.2s;
 		visibility: visible;
 		opacity: 1;
+
+		@media only screen and (max-width: $md) {
+			// Transiton when height increase
+			transition: max-height 0.75s;
+			max-height: 50rem;
+		}
 	}
+
+	// * CONTENT
 
 	&__content {
 		z-index: 10;
 		position: absolute;
 		background-color: $color-white;
 
-		padding: 2.5rem 2rem;
 		margin-left: -1rem;
 		width: 15rem;
 
 		border-radius: 5px;
-		box-shadow: 0 2rem 5rem rgba(#000, 0.3);
+		box-shadow: 0 1rem 3rem rgba(#000, 0.3);
 
 		transition: all 0.2s;
 		visibility: hidden;
 		opacity: 0;
 
-		&:hover {
+		overflow: hidden;
+
+		&:hover,
+		&:active,
+		&:focus {
+			outline: none;
 			visibility: visible;
 			opacity: 1;
+		}
+
+		@media only screen and (max-width: $md) {
+			position: relative;
+			margin-left: 0;
+
+			// Transiton when height decrease
+			transition: max-height 0.5s;
+			visibility: visible;
+			opacity: 1;
+
+			width: 100%;
+			max-height: 0;
+
+			box-shadow: none;
+			background-color: rgba($color-grey-1, 0.4);
 		}
 	}
 
 	&__list {
 		list-style: none;
+		padding: 2.5rem 2rem;
+
+		@media only screen and (max-width: $md) {
+			padding: 1.5rem 0;
+		}
 	}
 
 	&__item {
@@ -77,9 +132,17 @@
 			text-decoration: none;
 			margin: 0.75rem 0;
 			transition: all 0.2s;
+
+			@media only screen and (max-width: $md) {
+				margin: 1rem 0;
+				color: $color-grey-2;
+			}
 		}
 
-		&:hover {
+		&:hover,
+		&:active,
+		&:focus {
+			outline: none;
 			font-weight: bold;
 		}
 	}

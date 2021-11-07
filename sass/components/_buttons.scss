@@ -23,7 +23,10 @@
 	&--primary {
 		color: $color-white;
 
-		&:hover {
+		&:hover,
+		&:active,
+		&:focus {
+			outline: none;
 			background-color: rgba($color-white, 0.3);
 		}
 	}
@@ -32,9 +35,33 @@
 		color: $color-primary;
 		background-color: $color-white;
 
-		&:hover {
+		&:hover,
+		&:active,
+		&:focus {
+			outline: none;
 			color: $color-white;
 			background-color: rgba($color-white, 0.3);
+		}
+	}
+
+	// * Design for small screens
+	&--md-primary {
+		@media only screen and (max-width: $md) {
+			color: $color-white;
+			background-image: linear-gradient(
+				to right,
+				$color-gredient-light,
+				$color-gredient-dark
+			);
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: $color-primary;
+				outline: none;
+				background: none;
+				border: 1px solid $color-primary;
+			}
 		}
 	}
 
@@ -42,7 +69,10 @@
 		color: $color-white;
 		border: 1px solid $color-white;
 
-		&:hover {
+		&:hover,
+		&:active,
+		&:focus {
+			outline: none;
 			color: $color-primary;
 			background-color: $color-white;
 		}

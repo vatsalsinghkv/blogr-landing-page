@@ -1,18 +1,35 @@
 @use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
 
 .features {
-	padding: 15rem 0;
 	@include contentStyle;
+	padding: 15rem 2rem;
 	display: flex;
 	align-items: center;
 
+	@media only screen and (max-width: $md) {
+		padding: 7rem 2rem;
+		flex-direction: column;
+		text-align: center;
+	}
+
 	&__img {
 		display: inline-block;
-		width: 100%;
-		margin-left: -46rem;
+		max-width: 100%;
+		margin-left: -35vw;
+		flex-shrink: 1;
+
+		& > img {
+			width: 100%;
+		}
+
+		@media only screen and (max-width: $md) {
+			margin-left: 0;
+			margin-bottom: 4rem;
+		}
 	}
 
 	&__content {
-		flex: 0 0 50%;
+		flex: 0 50%;
 	}
 }

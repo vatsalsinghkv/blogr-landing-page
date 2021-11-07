@@ -1,63 +1,57 @@
+@use '../abstract/variables' as *;
+
 .u-text-center {
-	text-align: center !important;
+	text-align: center;
 }
-
-/* .u-text-center-sm {
-	@include response(sm) {
-		text-align: center !important;
-	}
-}
-
-.u-text-center-lg {
-	@include response(lg) {
-		text-align: center !important;
-	}
-} */
 
 // Margin-Top
 
 .u-mt-1 {
-	margin-top: 2rem !important;
+	margin-top: 2rem;
 }
 
 .u-mt-2 {
-	margin-top: 5rem !important;
+	margin-top: 5rem;
 }
 
 .u-mt-3 {
-	margin-top: 8rem !important;
+	margin-top: 8rem;
+
+	@media only screen and (max-width: $md) {
+		margin-top: 4rem;
+	}
 }
 
 .u-mt-4 {
-	margin-top: 10rem !important;
+	margin-top: 10rem;
+
+	@media only screen and (max-width: $md) {
+		margin-top: 5rem;
+	}
 }
 
 // Margin-Bottom
 
 .u-mb-1 {
-	margin-bottom: 2rem !important;
+	margin-bottom: 2rem;
 }
 
 .u-mb-2 {
-	margin-bottom: 5rem !important;
+	margin-bottom: 5rem;
 }
 
 .u-mb-3 {
-	margin-bottom: 8rem !important;
+	margin-bottom: 8rem;
+
+	@media only screen and (max-width: $md) {
+		margin-bottom: 4rem;
+	}
 }
 
 .u-mb-4 {
-	margin-bottom: 10rem !important;
+	margin-bottom: 10rem;
+
+	@media only screen and (max-width: $md) {
+		margin-bottom: 5rem;
+	}
 }
-
-/* .u-mb-5 {
-	margin-bottom: 10rem !important;
-
-	@include response(md) {
-		margin-bottom: 7rem !important;
-	}
-
-	@include response(xm) {
-		margin-bottom: 3rem !important;
-	}
-} */

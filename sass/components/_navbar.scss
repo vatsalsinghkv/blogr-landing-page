@@ -5,26 +5,61 @@
 	@include contentStyle;
 	@include flex(flex-start, center);
 	font-family: $font-display;
+	position: relative;
+
+	// * When togller is pressed
+	&.active &__background {
+		visibility: visible;
+		opacity: 1;
+	}
 
 	&__logo {
+		max-width: 100%;
 		margin-right: 5rem;
+
+		& > img {
+			width: 100%;
+		}
+		@media only screen and (max-width: $md) {
+			margin-right: 0;
+			width: 10rem;
+		}
 	}
 
 	// Button
-	// todo: Make visible and functional
 	&__toggler {
+		background: none;
+		border: none;
+		margin-left: auto;
 		display: none;
+		cursor: pointer;
+
+		@media only screen and (max-width: $md) {
+			display: inline-block;
+		}
 	}
 
-	// Icon for Button
-	// todo: Make it hamburger button
-	&__icon {
-	}
-
-	// todo: Make it white for mobile
 	&__background {
 		width: 100%;
+		border-radius: 5px;
 		@include flex(space-between, center);
+		transition: all 0.2s;
+
+		@media only screen and (max-width: $md) {
+			background-color: $color-white;
+			color: $color-text;
+			box-shadow: 0 0.5rem 5rem rgba(#000, 0.3);
+
+			position: absolute;
+			top: 7rem;
+
+			flex-direction: column;
+			padding: 3rem 1.5rem;
+			z-index: 10;
+
+			visibility: hidden;
+			opacity: 0;
+		}
 	}
 
 	// Navigation
@@ -32,29 +67,73 @@
 		@include flex(flex-start, center);
 		list-style: none;
 		margin-right: auto;
+
+		@media only screen and (max-width: $md) {
+			flex-direction: column;
+			margin: auto;
+			width: 100%;
+		}
 	}
 }
 
 // Navigation
 .nav {
 	&__link {
-		cursor: pointer;
-		user-select: none;
+		&,
+		&:link,
+		&:visited {
+			cursor: pointer;
+			user-select: none;
 
-		display: inline-block;
-		padding: 1.5rem 1rem;
-		&:not(:last-child) {
-			margin-right: 2rem;
+			display: inline-block;
+			padding: 1.5rem 1rem;
+			&:not(:last-child) {
+				margin-right: 2rem;
+			}
+
+			color: rgba($color-white, 0.7);
+			font-weight: bold;
+			text-decoration: none;
+			transition: all 0.2s;
+
+			&:hover,
+			&:active,
+			&:focus {
+				outline: none;
+				color: $color-white;
+				text-decoration: underline;
+			}
+
+			@media only screen and (max-width: $md) {
+				color: $color-secondary;
+				font-weight: normal;
+				&:not(:last-child) {
+					margin-right: 0;
+				}
+
+				&:hover,
+				&:active,
+				&:focus {
+					color: $color-grey-2;
+					text-decoration: none;
+				}
+			}
 		}
+	}
 
-		color: rgba($color-white, 0.7);
-		font-weight: bold;
-		text-decoration: none;
-		transition: all 0.2s;
-
-		&:hover {
-			color: $color-white;
-			text-decoration: underline;
+	@media only screen and (max-width: $md) {
+		&__item:last-child {
+			position: relative;
+			margin-bottom: 3.5rem;
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: -2rem;
+				height: 1px;
+				width: 100%;
+				background-color: rgba($color-grey-1, 0.6);
+			}
 		}
 	}
 }

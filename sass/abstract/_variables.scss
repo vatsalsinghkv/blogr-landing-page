@@ -32,11 +32,11 @@ $font-display: 'Ubuntu', sans-serif;
 $max-content-width: 110rem;
 
 // BREAK POINTS
-$lg: math.div(1200, 16) * 1em;
-$lg-sm: math.div(1000, 16) * 1em;
-$md: math.div(800, 16) * 1em;
+$lg: math.div(1000, 16) * 1em;
+$md: math.div(810, 16) * 1em;
 $md-sm: math.div(600, 16) * 1em;
 $sm: math.div(375, 16) * 1em;
+$sm-sm: math.div(315, 16) * 1em;
 
 // PATH
 // w.r.t css/

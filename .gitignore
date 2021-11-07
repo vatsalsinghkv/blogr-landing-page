@@ -1,8 +1,7 @@
 # Avoid node modules
-node_modules/
-css/
-design/
-DS_Store/
+/node_modules
+/css
+/design
 
 # Avoid accidental upload of the Sketch and Figma design files
 *.sketch

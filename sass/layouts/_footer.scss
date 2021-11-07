@@ -3,13 +3,28 @@
 
 .footer {
 	background-color: $color-grey-3;
-	padding: 8rem 0;
+	padding: 8rem 3rem;
 	border-top-right-radius: 10rem;
+
+	@media only screen and (max-width: $md) {
+		padding: 6rem 2rem;
+	}
 
 	&__container {
 		@include contentStyle;
 		display: flex;
 		justify-content: space-between;
+
+		@media only screen and (max-width: $md) {
+			text-align: center;
+			flex-direction: column;
+		}
+	}
+
+	&__logo-box {
+		@media only screen and (max-width: $md) {
+			margin-bottom: 5rem;
+		}
 	}
 }
 
@@ -19,11 +34,27 @@
 	display: flex;
 	justify-content: space-between;
 
+	@media only screen and (max-width: $md) {
+		flex-direction: column;
+	}
+
 	&__heading {
 		color: $color-white;
 		font-size: 1.6rem;
 		font-weight: bold;
 		margin-bottom: 3rem;
+
+		@media only screen and (max-width: $md) {
+			margin-bottom: 2rem;
+		}
+	}
+
+	&__menu {
+		@media only screen and (max-width: $md) {
+			&:not(:last-child) {
+				margin-bottom: 4rem;
+			}
+		}
 	}
 
 	&__list {
@@ -31,7 +62,7 @@
 	}
 
 	&__item {
-		margin: 0.75rem 0;
+		margin: 0.5rem 0;
 	}
 
 	&__link {
@@ -41,9 +72,13 @@
 			color: $color-grey-1;
 			text-decoration: none;
 			transition: 0.1s all;
+			padding: 0.25rem 0;
 		}
 
-		&:hover {
+		&:hover,
+		&:active,
+		&:focus {
+			outline: none;
 			// border-bottom: 2px solid currentColor;
 			text-decoration: underline;
 		}
